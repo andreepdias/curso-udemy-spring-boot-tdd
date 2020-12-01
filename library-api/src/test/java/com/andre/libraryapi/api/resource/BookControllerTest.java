@@ -222,7 +222,7 @@ public class BookControllerTest {
 
         mvc.perform(request)
                 .andExpect(status().isNotFound());
-        }
+    }
 
     private BookDTO createNewBook() {
         return BookDTO.builder().author("André").title("As aventuras").isbn("001").build();
@@ -255,6 +255,5 @@ public class BookControllerTest {
             .andExpect(jsonPath("totalElements").value(1))
             .andExpect(jsonPath("pageable.pageSize").value(100))
             .andExpect(jsonPath("pageable.pageNumber").value(0));
-
     }
 }

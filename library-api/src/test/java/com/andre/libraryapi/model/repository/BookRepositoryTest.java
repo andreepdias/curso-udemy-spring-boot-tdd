@@ -40,10 +40,6 @@ public class BookRepositoryTest {
         assertThat(exists).isTrue();
     }
 
-    private Book createNewBook(String isbn) {
-        return Book.builder().title("Aventuras").author("Nanda").isbn(isbn).build();
-    }
-
     @Test
     @DisplayName("Deve retornar falso quando não existir um livro na base com o ISBN informado.")
     public void returnTrueWhenIsbnDoesntExists(){
@@ -93,6 +89,10 @@ public class BookRepositoryTest {
 
         Book deletedBook = entityManager.find(Book.class, book.getId());
         assertThat(deletedBook).isNull();
+    }
+
+    public static Book createNewBook(String isbn) {
+        return Book.builder().title("Aventuras").author("Nanda").isbn(isbn).build();
     }
 
 }
