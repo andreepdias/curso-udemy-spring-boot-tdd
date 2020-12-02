@@ -4,6 +4,7 @@ import com.andre.libraryapi.api.dto.BookDTO;
 import com.andre.libraryapi.exception.BusinessException;
 import com.andre.libraryapi.model.entity.Book;
 import com.andre.libraryapi.service.BookService;
+import com.andre.libraryapi.service.LoanService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -45,6 +46,9 @@ public class BookControllerTest {
 
     @MockBean
     BookService service;
+
+    @MockBean
+    LoanService loanService;
 
     @Test
     @DisplayName("Deve criar um livro com sucesso.")
